@@ -1,10 +1,7 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {TouchableOpacity, Text, Alert} from 'react-native';
+import Routes from './routes';
 
 export default function() {
-  return (
-    <TouchableOpacity onPress={() => Alert.alert('clicked')}>
-      <Text>Oi</Text>
-    </TouchableOpacity>
-  );
+    return <Routes />;
 }
