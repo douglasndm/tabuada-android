@@ -1,80 +1,48 @@
-import React, { useState, useEffect } from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { View, Text, FlatList } from 'react-native';
+import React from 'react';
+import {Dimensions} from 'react-native'
+import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 
 import ResultsComponent from '../../components/results';
 
+function CustonTabBar(props){
+    return <TabBar
+                {...props}
+                scrollEnabled={true}
+                style={{backgroundColor: '#00bfff'}} />
+}
+
 
 export default function ({ route, navigation }) {
+    const [index, setIndex] = React.useState(0);
+    const [routes] = React.useState([
+      { key: 'sum', title: 'Soma' },
+      { key: 'sub', title: 'Subtração' },
+      { key: 'multi', title: 'Multiplicação' },
+      { key: 'divide', title: 'Divisão' },
+      { key: 'square', title: 'Raiz quadrada'}
+    ]);
 
     const { numTabuar } = route.params;
     const { numVezes } = route.params;
 
-    const Tab = createBottomTabNavigator();
+
+    const initialLayout = { width: Dimensions.get('window').width };
 
     return (
-        <Tab.Navigator
-            screenOptions={({ route }) => ({
-            tabBarIcon: () => {
-                let iconName;
 
-                if (route.name === 'sumResults') {
-                    iconName = 'plus';
-                }
-                else if(route.name === 'subtractResults'){
-                    iconName = 'minus';
-                }
-                else if(route.name === 'multiplicationResults'){
-                    iconName = 'times';
-                }
-                else if(route.name === 'divideResults'){
-                    iconName = 'plus';
-                }
-                else if(route.name === 'modResults'){
-                    iconName = 'plus';
-                }
-                else if(route.name === 'squareRootResults'){
-                    iconName = 'plus';
-                }
+        <TabView
+            tabBarPosition="bottom"
+            navigationState={{ index, routes }}
+            onIndexChange={setIndex}
+            renderScene={SceneMap({
+                sum: () => <ResultsComponent numTabuar={numTabuar} numVezes={numVezes} resultType={'sum'} />,
+                sub: () => <ResultsComponent numTabuar={numTabuar} numVezes={numVezes} resultType={'sub'} />,
+                multi: () => <ResultsComponent numTabuar={numTabuar} numVezes={numVezes} resultType={'multi'} />,
+                divide: () => <ResultsComponent numTabuar={numTabuar} numVezes={numVezes} resultType={'divide'} />,
+                square: () => <ResultsComponent numTabuar={numTabuar} numVezes={numVezes} resultType={'square'} />,
+            })}
+            initialLayout={initialLayout}
+            renderTabBar={CustonTabBar} />
 
-                return <FontAwesome name={iconName} size={14} color={'black'} />
-            },
-
-        })}>
-
-
-            <Tab.Screen
-                name="sumResults"
-                options={{ tabBarLabel: "Soma" }}
-                component={ResultsComponent}
-                initialParams={{ resultType: "sum", numTabuar, numVezes }} />
-
-            <Tab.Screen
-                name="subtractResults"
-                options={{ tabBarLabel: 'Subtração' }}
-                component={ResultsComponent}
-                initialParams={{ resultType: "sub", numTabuar, numVezes }} />
-
-            <Tab.Screen
-                name="multiplicationResults"
-                options={{ tabBarLabel: 'Multiplicação' }}
-                component={ResultsComponent}
-                initialParams={{ resultType: "multi", numTabuar, numVezes }} />
-
-            <Tab.Screen
-                name="divideResults"
-                options={{ tabBarLabel: 'Divisão' }}
-                component={ResultsComponent}
-                initialParams={{ resultType: "divide", numTabuar, numVezes }} />
-
-            <Tab.Screen
-                name="squareRootResults"
-                options={{ tabBarLabel: 'Raiz quadrada' }}
-                component={ResultsComponent}
-                initialParams={{ resultType: "square", numTabuar, numVezes }} />
-
-
-        </Tab.Navigator>
     );
 }

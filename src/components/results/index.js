@@ -11,15 +11,13 @@ function ResItem({ result }) {
     )
 }
 
-function results({ route }) {
+function results(props) {
     const [results, setResults] = useState([]);
 
-    const { numTabuar, numVezes, resultType } = route.params;
-
-    console.log(resultType)
+    const { numTabuar, numVezes, resultType } = props;
 
     useEffect(() => {
-        for (let i = 0; i <= numVezes; i++) {
+        for (let i = 0; i < numVezes; i++) {
 
             switch (resultType) {
                 case 'sum':
