@@ -1,4 +1,4 @@
-package com.rntabuada;
+package com.tabuada;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
