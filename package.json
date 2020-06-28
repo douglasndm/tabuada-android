@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint .",
     "android-dev": "ENVFILE=.env.dev react-native run-android",
-	"android-prod": "ENVFILE=.env.prod react-native run-android"
+    "android-prod": "ENVFILE=.env.prod react-native run-android"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
@@ -23,7 +23,6 @@
     "react-native-safe-area-context": "^3.0.5",
     "react-native-screens": "^2.9.0",
     "react-native-tab-view": "^2.14.4",
-    "react-native-vector-icons": "^6.6.0",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
