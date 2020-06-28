@@ -34,6 +34,7 @@ export default function ({ route, navigation }) {
             tabBarPosition="bottom"
             navigationState={{ index, routes }}
             onIndexChange={setIndex}
+            lazyPreloadDistance={5}
             renderScene={SceneMap({
                 sum: () => <ResultsComponent numTabuar={numTabuar} numVezes={numVezes} resultType={'sum'} />,
                 sub: () => <ResultsComponent numTabuar={numTabuar} numVezes={numVezes} resultType={'sub'} />,
