@@ -30,7 +30,7 @@ export default function({navigation}) {
             <TextInput
                 spellCheck={false}
                 keyboardType="numeric"
-                placeholder="Exibir quantos resultados?"
+                placeholder="Tabuada até qual número?"
                 value={String(numVezes)}
                 onChangeText={value => setNumVezes(value)}
             />

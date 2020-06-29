@@ -3,6 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
+import Crashes from 'appcenter-crashes';
 import App from './src';
 import {name as appName} from './app.json';
 

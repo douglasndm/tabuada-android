@@ -1,4 +1,4 @@
-package com.tabuada;
+package com.rntabuada;
 
 import android.app.Application;
 import android.content.Context;
