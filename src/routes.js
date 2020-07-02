@@ -6,12 +6,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 import MainPage from './Views/MainPage';
 import Results from './Views/Results';
 
+import { dark, light } from './Styles/themes';
+
 const StackNavigator = createStackNavigator();
 
-export default function () {
+export default function ({theme}) {
+
     return (
-        <NavigationContainer>
-            <StatusBar backgroundColor={'#00bfff'} translucent={true} />
+        <NavigationContainer theme={theme === 'dark' ? dark : light}>
+            <StatusBar backgroundColor={'#00bfff'} translucent={true}  />
 
             <StackNavigator.Navigator
                 screenOptions={{
@@ -26,7 +29,7 @@ export default function () {
                 <StackNavigator.Screen
                     name="home"
                     component={MainPage}
-                    options={{ title: 'Tabuada' }}
+                    options={{ title: 'Tabuada'}}
                 />
 
                 <StackNavigator.Screen

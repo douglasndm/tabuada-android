@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, FlatList } from 'react-native'
+import { useTheme } from '@react-navigation/native'
 
 import { ResultItem, ResultText } from './styles';
 
 function ResItem({ result }) {
+    const theme = useTheme();
+
     return (
-        <ResultItem>
-            <ResultText>{result}</ResultText>
+        <ResultItem style={{borderBottomColor: theme.colors.lowBorder}}>
+            <ResultText style={{color: theme.colors.text}}>{result}</ResultText>
         </ResultItem>
     )
 }

@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { darken } from 'polished';
 
 export const Container = styled.View`
     display: flex;
@@ -21,7 +22,7 @@ export const Button = styled.TouchableOpacity`
 
     align-items: center;
 
-    background-color: #00bfff;
+    background-color:#00bfff;
     padding: 20px;
     border-radius: 8px;
 `;
