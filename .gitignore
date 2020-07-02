@@ -4,6 +4,9 @@
 
 appcenter-config.json
 
+firebase.json
+google-services.json
+
 # OSX
 #
 .DS_Store

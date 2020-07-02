@@ -37,6 +37,7 @@ export default function({navigation}) {
             <Button onPress={handleButtonClick}>
                 <ButtonText>Calcular</ButtonText>
             </Button>
+
         </Container>
     );
 }
