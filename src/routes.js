@@ -19,7 +19,8 @@ export default function () {
                         backgroundColor: '#00bfff',
                     },
                     headerTintColor: '#fff',
-                    headerTitleStyle: { fontWeight: 'bold', textAlign: 'center' },
+                    headerTitleStyle: { fontWeight: 'bold', textAlign: 'center', fontSize: 24 },
+
                 }}>
 
                 <StackNavigator.Screen
@@ -33,7 +34,7 @@ export default function () {
                     component={Results}
                     options={{
                         title: 'Resultados',
-                        headerTitleStyle: { textAlign: 'left' },
+                        headerTitleStyle: { textAlign: 'left', }
                     }}
                 />
 

@@ -24,11 +24,11 @@ export default function ({ route, navigation }) {
 
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
-      { key: 'sum', title: 'Soma' },
-      { key: 'sub', title: 'Subtração' },
-      { key: 'multi', title: 'Multiplicação' },
-      { key: 'divide', title: 'Divisão' },
-      { key: 'square', title: 'Raiz quadrada'}
+      { key: 'sum', title: 'Soma', accessibilityLabel: 'Exibir resultados de soma' },
+      { key: 'sub', title: 'Subtração', accessibilityLabel: 'Exibir resultados de subtração' },
+      { key: 'multi', title: 'Multiplicação', accessibilityLabel: 'Exibir resultados de multiplicação' },
+      { key: 'divide', title: 'Divisão', accessibilityLabel: 'Exibir resultados de divisão' },
+      { key: 'square', title: 'Raiz quadrada', accessibilityLabel: 'Exibir resultados de raiz quadrada' }
     ]);
 
     const initialLayout = { width: Dimensions.get('window').width };
@@ -61,7 +61,11 @@ export default function ({ route, navigation }) {
                 renderTabBar={CustonTabBar} />
 
             <AdContainer displayAd={displayAd}>
-                <BannerAd unitId={adunit} size={BannerAdSize.BANNER} onAdFailedToLoad={handleAdFailedToLoad} />
+                <BannerAd
+                    unitId={adunit}
+                    size={BannerAdSize.BANNER}
+                    onAdFailedToLoad={handleAdFailedToLoad}
+                     />
             </AdContainer>
         </>
 
