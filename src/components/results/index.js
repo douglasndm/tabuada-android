@@ -17,7 +17,7 @@ function results(props) {
     const { numTabuar, numVezes, resultType } = props;
 
     useEffect(() => {
-        for (let i = 0; i < numVezes; i++) {
+        for (let i = 0; i <= numVezes; i++) {
 
             switch (resultType) {
                 case 'sum':
