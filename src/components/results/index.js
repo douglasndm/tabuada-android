@@ -34,11 +34,11 @@ function results(props) {
                     break;
                 case 'divide':
                     if(i !== 0)
-                        setResults((prevState) => [...prevState, `${numTabuar} / ${i} = ${(numTabuar / i)}`]);
+                        setResults((prevState) => [...prevState, `${numTabuar} / ${i} = ${(numTabuar / i).toFixed(3)}`]);
                     break;
                 case 'square':
                     if(i !== 0)
-                        setResults((prevState) => [...prevState, `√${i} = ${Math.sqrt(i)}`]);
+                        setResults((prevState) => [...prevState, `√${i} = ${Math.sqrt(i).toFixed(4)}`]);
                     break;
                 default:
                     break;

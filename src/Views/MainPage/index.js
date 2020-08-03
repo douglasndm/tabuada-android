@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useTheme } from '@react-navigation/native';
-import {Alert} from 'react-native';
-import {Container, TextInput, Button, ButtonText} from './styles';
+import { Alert } from 'react-native';
+import { Container, TextInput, Button, ButtonText } from './styles';
 
-export default function({navigation, ...props}) {
+export default ({ navigation, ...props }) => {
     const [numTabuar, setNumTabuar] = useState('');
     const [numVezes, setNumVezes] = useState('');
 
@@ -27,7 +27,7 @@ export default function({navigation, ...props}) {
                 keyboardType="numeric"
                 placeholder="Tabuada de qual número?"
                 value={String(numTabuar)}
-                onChangeText={value => setNumTabuar(value)}
+                onChangeText={(value) => setNumTabuar(value)}
             />
 
             <TextInput
@@ -35,12 +35,14 @@ export default function({navigation, ...props}) {
                 keyboardType="numeric"
                 placeholder="Tabuada até qual número?"
                 value={String(numVezes)}
-                onChangeText={value => setNumVezes(value)}
+                onChangeText={(value) => setNumVezes(value)}
             />
-            <Button onPress={handleButtonClick} style={{backgroundColor: theme.colors.foreground}}>
+            <Button
+                onPress={handleButtonClick}
+                style={{ backgroundColor: theme.colors.foreground }}
+            >
                 <ButtonText>Calcular</ButtonText>
             </Button>
-
         </Container>
     );
-}
+};

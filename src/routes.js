@@ -1,20 +1,16 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import MainPage from './Views/MainPage';
 import Results from './Views/Results';
 
-import { dark, light } from './Styles/themes';
-
 const StackNavigator = createStackNavigator();
 
-export default function ({theme}) {
-
+export default () => {
     return (
-        <NavigationContainer theme={theme === 'dark' ? dark : light}>
-            <StatusBar backgroundColor={'#00bfff'} translucent={true}  />
+        <>
+            <StatusBar backgroundColor="#00bfff" translucent />
 
             <StackNavigator.Navigator
                 screenOptions={{
@@ -22,14 +18,17 @@ export default function ({theme}) {
                         backgroundColor: '#00bfff',
                     },
                     headerTintColor: '#fff',
-                    headerTitleStyle: { fontWeight: 'bold', textAlign: 'center', fontSize: 24 },
-
-                }}>
-
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                        fontSize: 24,
+                    },
+                }}
+            >
                 <StackNavigator.Screen
                     name="home"
                     component={MainPage}
-                    options={{ title: 'Tabuada'}}
+                    options={{ title: 'Tabuada' }}
                 />
 
                 <StackNavigator.Screen
@@ -37,11 +36,10 @@ export default function ({theme}) {
                     component={Results}
                     options={{
                         title: 'Resultados',
-                        headerTitleStyle: { textAlign: 'left', }
+                        headerTitleStyle: { textAlign: 'left' },
                     }}
                 />
-
             </StackNavigator.Navigator>
-        </NavigationContainer>
+        </>
     );
-}
+};
