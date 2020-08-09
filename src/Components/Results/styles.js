@@ -8,13 +8,14 @@ export const ResultItem = styled.View`
     margin-top: 30px;
     padding-bottom: 7px;
 
-    width:90%;
+    width: 90%;
 
-    border-bottom-width:1px;
-    border-bottom-color: rgba(0,0,0,.1);
+    border-bottom-width: 1px;
+    border-bottom-color: ${(props) => props.theme.colors.subText};
 `;
 export const ResultText = styled.Text`
     font-size: 18px;
     font-weight: 100;
 
+    color: ${(props) => props.theme.colors.text};
 `;

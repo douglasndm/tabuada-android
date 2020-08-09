@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { useTheme } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { Alert } from 'react-native';
 import { Container, TextInput, Button, ButtonText } from './styles';
 
-export default ({ navigation, ...props }) => {
+export default () => {
+    const navigation = useNavigation();
+
     const [numTabuar, setNumTabuar] = useState('');
     const [numVezes, setNumVezes] = useState('');
 
@@ -17,8 +19,6 @@ export default ({ navigation, ...props }) => {
             numVezes,
         });
     }
-
-    const theme = useTheme();
 
     return (
         <Container>
@@ -37,10 +37,7 @@ export default ({ navigation, ...props }) => {
                 value={String(numVezes)}
                 onChangeText={(value) => setNumVezes(value)}
             />
-            <Button
-                onPress={handleButtonClick}
-                style={{ backgroundColor: theme.colors.foreground }}
-            >
+            <Button onPress={handleButtonClick}>
                 <ButtonText>Calcular</ButtonText>
             </Button>
         </Container>
