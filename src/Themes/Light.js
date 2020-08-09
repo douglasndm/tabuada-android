@@ -11,8 +11,10 @@ export default {
     colors: {
         background: '#EAEAEA',
         text: '#000',
-        subText: '#EAEAEA',
+        subText: '#363636',
 
         accent: '#00bfff',
+
+        inputBackground: '#dbdbdb',
     },
 };
