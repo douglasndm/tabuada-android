@@ -27,7 +27,13 @@ export default () => {
                 keyboardType="numeric"
                 placeholder="Tabuada de qual número?"
                 value={String(numTabuar)}
-                onChangeText={(value) => setNumTabuar(value)}
+                onChangeText={(v) => {
+                    const regex = /^[0-9\b]+$/;
+
+                    if (v === '' || regex.test(v)) {
+                        setNumTabuar(v);
+                    }
+                }}
             />
 
             <TextInput
@@ -35,7 +41,13 @@ export default () => {
                 keyboardType="numeric"
                 placeholder="Tabuada até qual número?"
                 value={String(numVezes)}
-                onChangeText={(value) => setNumVezes(value)}
+                onChangeText={(v) => {
+                    const regex = /^[0-9\b]+$/;
+
+                    if (v === '' || regex.test(v)) {
+                        setNumVezes(v);
+                    }
+                }}
             />
             <Button onPress={handleButtonClick}>
                 <ButtonText>Calcular</ButtonText>
