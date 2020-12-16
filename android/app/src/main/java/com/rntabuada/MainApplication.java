@@ -11,6 +11,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import com.microsoft.codepush.react.CodePush;
 
 import androidx.multidex.MultiDexApplication;
 import androidx.multidex.*;
@@ -43,6 +44,14 @@ public class MainApplication extends Application implements ReactApplication {
         @Override
         protected String getJSMainModuleName() {
           return "index";
+        }
+
+        // 2. Override the getJSBundleFile method to let
+        // the CodePush runtime determine where to get the JS
+        // bundle location from on each app start
+        @Override
+        protected String getJSBundleFile() {
+            return CodePush.getJSBundleFile();
         }
       };
 
