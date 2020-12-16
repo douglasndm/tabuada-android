@@ -21,7 +21,7 @@ export default () => {
     }
 
     return (
-        <Container style={{ backgroundColor: theme.colors.background }}>
+        <Container>
             <TextInput
                 spellCheck={false}
                 keyboardType="numeric"

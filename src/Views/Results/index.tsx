@@ -25,8 +25,6 @@ function CustonTabBar(props) {
 export default function ({ route, navigation }) {
     const [displayAd, setDisplayAd] = React.useState(true);
 
-    const theme = useTheme();
-
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
         {

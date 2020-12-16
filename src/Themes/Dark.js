@@ -1,4 +1,4 @@
-import { DefaultTheme } from 'react-native-paper';
+import { DefaultTheme } from 'styled-components/native';
 
 export default {
     name: 'dark',
