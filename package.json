@@ -20,7 +20,7 @@
     "appcenter-analytics": "^3.0.3",
     "polished": "^3.6.5",
     "react": "16.13.1",
-    "react-native": "0.63.2",
+    "react-native": "^0.63.4",
     "react-native-appearance": "^0.3.4",
     "react-native-config": "^1.2.1",
     "react-native-gesture-handler": "^1.6.1",
