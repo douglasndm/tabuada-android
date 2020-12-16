@@ -7,8 +7,6 @@ appcenter-config.json
 firebase.json
 google-services.json
 
-sentry.properties
-
 # OSX
 #
 .DS_Store

@@ -1,5 +1,7 @@
 apply plugin: "com.android.application"
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 import com.android.build.OutputFile
 
@@ -83,7 +85,6 @@ project.ext.react = [
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
-apply from: "../../node_modules/@sentry/react-native/sentry.gradle"
 apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
 /**
@@ -184,6 +185,17 @@ android {
         release {
             resValue "string", "CodePushDeploymentKey", codePushProductionDeploymentKey
 
+            /* Add the firebaseCrashlytics extension (by default,
+            * it's disabled to improve build speeds) and set
+            * nativeSymbolUploadEnabled to true. */
+
+            firebaseCrashlytics {
+                nativeSymbolUploadEnabled true
+
+                unstrippedNativeLibsDir "build/intermediates/merged_native_libs/release/out/lib/"
+                strippedNativeLibsDir "build/intermediates/stripped_native_libs/release/out/lib/"
+            }
+
             // Caution! In production, you need to generate your own keystore file.
            // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.release
@@ -248,4 +260,4 @@ task copyDownloadableDepsToLibs(type: Copy) {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
-apply plugin: 'com.google.gms.google-services'
+
