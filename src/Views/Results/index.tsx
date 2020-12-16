@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dimensions } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
 import EnvConfig from 'react-native-config';
@@ -22,8 +23,16 @@ function CustonTabBar(props) {
     );
 }
 
-export default function ({ route, navigation }) {
+interface Props {
+    numberToCalc: number;
+    howManyTimesCalc: number;
+}
+
+const Results: React.FC = () => {
     const [displayAd, setDisplayAd] = React.useState(true);
+
+    const { params } = useRoute();
+    const routeParams = params as Props;
 
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
@@ -56,9 +65,6 @@ export default function ({ route, navigation }) {
 
     const initialLayout = { width: Dimensions.get('window').width };
 
-    const { numTabuar } = route.params;
-    const { numVezes } = route.params;
-
     function handleAdFailedToLoad() {
         setDisplayAd(false);
     }
@@ -73,36 +79,36 @@ export default function ({ route, navigation }) {
                 renderScene={SceneMap({
                     sum: () => (
                         <ResultsComponent
-                            numTabuar={numTabuar}
-                            numVezes={numVezes}
+                            numTabuar={routeParams.numberToCalc}
+                            numVezes={routeParams.howManyTimesCalc}
                             resultType="sum"
                         />
                     ),
                     sub: () => (
                         <ResultsComponent
-                            numTabuar={numTabuar}
-                            numVezes={numVezes}
+                            numTabuar={routeParams.numberToCalc}
+                            numVezes={routeParams.howManyTimesCalc}
                             resultType="sub"
                         />
                     ),
                     multi: () => (
                         <ResultsComponent
-                            numTabuar={numTabuar}
-                            numVezes={numVezes}
+                            numTabuar={routeParams.numberToCalc}
+                            numVezes={routeParams.howManyTimesCalc}
                             resultType="multi"
                         />
                     ),
                     divide: () => (
                         <ResultsComponent
-                            numTabuar={numTabuar}
-                            numVezes={numVezes}
+                            numTabuar={routeParams.numberToCalc}
+                            numVezes={routeParams.howManyTimesCalc}
                             resultType="divide"
                         />
                     ),
                     square: () => (
                         <ResultsComponent
-                            numTabuar={numTabuar}
-                            numVezes={numVezes}
+                            numTabuar={routeParams.numberToCalc}
+                            numVezes={routeParams.howManyTimesCalc}
                             resultType="square"
                         />
                     ),
@@ -111,13 +117,17 @@ export default function ({ route, navigation }) {
                 renderTabBar={CustonTabBar}
             />
 
-            <AdContainer displayAd={displayAd}>
-                <BannerAd
-                    unitId={adunit}
-                    size={BannerAdSize.BANNER}
-                    onAdFailedToLoad={handleAdFailedToLoad}
-                />
-            </AdContainer>
+            {displayAd && (
+                <AdContainer>
+                    <BannerAd
+                        unitId={adunit}
+                        size={BannerAdSize.BANNER}
+                        onAdFailedToLoad={handleAdFailedToLoad}
+                    />
+                </AdContainer>
+            )}
         </Container>
     );
-}
+};
+
+export default Results;

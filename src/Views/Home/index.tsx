@@ -15,8 +15,8 @@ export default () => {
         }
 
         navigation.navigate('results', {
-            numTabuar,
-            numVezes,
+            numberToCalc: numTabuar,
+            howManyTimesCalc: numVezes,
         });
     }
 
