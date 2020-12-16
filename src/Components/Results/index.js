@@ -1,17 +1,12 @@
-import { View, FlatList } from 'react-native';
 import React, { useState, useEffect } from 'react';
-import { useTheme } from 'react-native-paper';
+import { View, FlatList } from 'react-native';
 
 import { ResultItem, ResultText } from './styles';
 
 function ResItem({ result }) {
-    const theme = useTheme();
-
     return (
-        <ResultItem style={{ borderBottomColor: theme.colors.text }}>
-            <ResultText style={{ color: theme.colors.text }}>
-                {result}
-            </ResultText>
+        <ResultItem>
+            <ResultText>{result}</ResultText>
         </ResultItem>
     );
 }

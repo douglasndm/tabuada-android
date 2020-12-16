@@ -1,6 +1,8 @@
 import { DefaultTheme } from 'react-native-paper';
 
 export default {
+    name: 'dark',
+
     ...DefaultTheme,
 
     dark: true, // whether this is a dark theme or light theme.
@@ -13,9 +15,9 @@ export default {
         background: 'rgba(0, 0, 0, 0.85)',
         text: '#fff',
         subText: '#EAEAEA',
-        textAccent: '#00bfff',
 
-        inputText: '#ffffff',
-        inputBackground: '#696969',
+        accent: '#00bfff',
+
+        inputBackground: '#404040',
     },
 };

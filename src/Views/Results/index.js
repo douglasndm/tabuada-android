@@ -1,17 +1,16 @@
 import React from 'react';
-import { Dimensions, View } from 'react-native';
+import { Dimensions } from 'react-native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
-import { useTheme } from 'react-native-paper';
 import EnvConfig from 'react-native-config';
 
-import { AdContainer } from './styles';
+import { Container, AdContainer } from './styles';
 
 import ResultsComponent from '../../Components/Results';
 
 const adunit = __DEV__
     ? TestIds.BANNER
-    : EnvConfig.ANDROID_ADMOB_RESULTPAGE_BANNER;
+    : EnvConfig.ANDROID_ADMOB_ADUNIT_RESULTSBANNER;
 
 function CustonTabBar(props) {
     return (
@@ -23,7 +22,7 @@ function CustonTabBar(props) {
     );
 }
 
-export default ({ route, navigation }) => {
+export default function ({ route, navigation }) {
     const [displayAd, setDisplayAd] = React.useState(true);
 
     const theme = useTheme();
@@ -67,7 +66,7 @@ export default ({ route, navigation }) => {
     }
 
     return (
-        <View style={{ backgroundColor: theme.colors.background, flex: 1 }}>
+        <Container>
             <TabView
                 tabBarPosition="bottom"
                 navigationState={{ index, routes }}
@@ -121,6 +120,6 @@ export default ({ route, navigation }) => {
                     onAdFailedToLoad={handleAdFailedToLoad}
                 />
             </AdContainer>
-        </View>
+        </Container>
     );
-};
+}

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { useTheme } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 import { Alert } from 'react-native';
 import { Container, TextInput, Button, ButtonText } from './styles';
 
-export default ({ navigation, ...props }) => {
+export default () => {
+    const navigation = useNavigation();
+
     const [numTabuar, setNumTabuar] = useState('');
     const [numVezes, setNumVezes] = useState('');
 
@@ -18,8 +20,6 @@ export default ({ navigation, ...props }) => {
         });
     }
 
-    const theme = useTheme();
-
     return (
         <Container style={{ backgroundColor: theme.colors.background }}>
             <TextInput
@@ -27,11 +27,12 @@ export default ({ navigation, ...props }) => {
                 keyboardType="numeric"
                 placeholder="Tabuada de qual número?"
                 value={String(numTabuar)}
-                onChangeText={(value) => setNumTabuar(value)}
-                placeholderTextColor={theme.colors.inputText}
-                style={{
-                    backgroundColor: theme.colors.inputBackground,
-                    color: theme.colors.inputText,
+                onChangeText={(v) => {
+                    const regex = /^[0-9\b]+$/;
+
+                    if (v === '' || regex.test(v)) {
+                        setNumTabuar(v);
+                    }
                 }}
             />
 
@@ -40,20 +41,16 @@ export default ({ navigation, ...props }) => {
                 keyboardType="numeric"
                 placeholder="Tabuada até qual número?"
                 value={String(numVezes)}
-                onChangeText={(value) => setNumVezes(value)}
-                placeholderTextColor={theme.colors.inputText}
-                style={{
-                    backgroundColor: theme.colors.inputBackground,
-                    color: theme.colors.inputText,
+                onChangeText={(v) => {
+                    const regex = /^[0-9\b]+$/;
+
+                    if (v === '' || regex.test(v)) {
+                        setNumVezes(v);
+                    }
                 }}
             />
-            <Button
-                onPress={handleButtonClick}
-                style={{ backgroundColor: theme.colors.accent }}
-            >
-                <ButtonText style={{ color: theme.colors.text }}>
-                    Calcular
-                </ButtonText>
+            <Button onPress={handleButtonClick}>
+                <ButtonText>Calcular</ButtonText>
             </Button>
         </Container>
     );
