@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTheme } from '@react-navigation/native';
+import { useTheme } from 'react-native-paper';
 import { Alert } from 'react-native';
 import { Container, TextInput, Button, ButtonText } from './styles';
 
@@ -21,13 +21,18 @@ export default ({ navigation, ...props }) => {
     const theme = useTheme();
 
     return (
-        <Container>
+        <Container style={{ backgroundColor: theme.colors.background }}>
             <TextInput
                 spellCheck={false}
                 keyboardType="numeric"
                 placeholder="Tabuada de qual número?"
                 value={String(numTabuar)}
                 onChangeText={(value) => setNumTabuar(value)}
+                placeholderTextColor={theme.colors.inputText}
+                style={{
+                    backgroundColor: theme.colors.inputBackground,
+                    color: theme.colors.inputText,
+                }}
             />
 
             <TextInput
@@ -36,12 +41,19 @@ export default ({ navigation, ...props }) => {
                 placeholder="Tabuada até qual número?"
                 value={String(numVezes)}
                 onChangeText={(value) => setNumVezes(value)}
+                placeholderTextColor={theme.colors.inputText}
+                style={{
+                    backgroundColor: theme.colors.inputBackground,
+                    color: theme.colors.inputText,
+                }}
             />
             <Button
                 onPress={handleButtonClick}
-                style={{ backgroundColor: theme.colors.foreground }}
+                style={{ backgroundColor: theme.colors.accent }}
             >
-                <ButtonText>Calcular</ButtonText>
+                <ButtonText style={{ color: theme.colors.text }}>
+                    Calcular
+                </ButtonText>
             </Button>
         </Container>
     );
