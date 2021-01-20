@@ -16,8 +16,6 @@
     "@react-native-firebase/crashlytics": "^10.5.1",
     "@react-navigation/native": "^5.5.1",
     "@react-navigation/stack": "^5.5.1",
-    "appcenter": "^3.0.3",
-    "appcenter-analytics": "^3.0.3",
     "polished": "^3.6.5",
     "react": "16.13.1",
     "react-native": "^0.63.4",
