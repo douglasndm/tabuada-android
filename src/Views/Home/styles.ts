@@ -10,6 +10,12 @@ export const Container = styled.View`
     background-color: ${(props) => props.theme.colors.background};
 `;
 
+export const InputContainer = styled.View`
+    width: 100%;
+    padding: 0 10%;
+    margin-bottom: 20px;
+`;
+
 export const TextInput = styled.TextInput.attrs((props) => ({
     placeholderTextColor: props.theme.colors.subText,
 }))`
@@ -17,7 +23,6 @@ export const TextInput = styled.TextInput.attrs((props) => ({
     color: ${(props) => props.theme.colors.text};
     margin-bottom: 15px;
     border-radius: 8px;
-    width: 80%;
     padding: 15px;
 `;
 
@@ -25,6 +30,7 @@ export const Button = styled.TouchableOpacity`
     display: flex;
 
     align-items: center;
+    align-self: center;
 
     background-color: ${(props) => props.theme.colors.accent};
     padding: 20px;
