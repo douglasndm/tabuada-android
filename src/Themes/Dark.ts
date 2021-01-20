@@ -1,13 +1,7 @@
 import { DefaultTheme } from 'styled-components/native';
 
-export default {
+const Dark: DefaultTheme = {
     name: 'dark',
-
-    ...DefaultTheme,
-
-    dark: true, // whether this is a dark theme or light theme.
-    mode: 'exact',
-    roundness: 12,
 
     colors: {
         primary: '#00bfff',
@@ -15,9 +9,11 @@ export default {
         background: 'rgba(0, 0, 0, 0.85)',
         text: '#fff',
         subText: '#EAEAEA',
+        textAccent: '#00bfff',
 
-        accent: '#00bfff',
-
+        inputText: '#fff',
         inputBackground: '#404040',
     },
 };
+
+export default Dark;
