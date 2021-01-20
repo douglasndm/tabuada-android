@@ -17,6 +17,7 @@
     "@react-navigation/drawer": "^5.11.5",
     "@react-navigation/native": "^5.9.0",
     "@react-navigation/stack": "^5.13.0",
+    "babel-plugin-module-resolver": "^4.1.0",
     "polished": "^3.6.5",
     "react": "16.13.1",
     "react-native": "^0.63.4",
@@ -56,7 +57,6 @@
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.59.0",
     "prettier": "^2.2.1",
-    "react-native-typescript-transformer": "^1.2.13",
     "react-test-renderer": "16.13.1",
     "typescript": "^4.1.3"
   },
