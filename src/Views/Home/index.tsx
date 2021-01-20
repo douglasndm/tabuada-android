@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
+import { Platform, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Alert } from 'react-native';
-import { Container, TextInput, Button, ButtonText } from './styles';
+import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
+import EnvConfig from 'react-native-config';
 
-export default () => {
+import {
+    Container,
+    InputContainer,
+    TextInput,
+    Button,
+    ButtonText,
+} from './styles';
+
+const Home: React.FC = () => {
     const navigation = useNavigation();
 
     const [numTabuar, setNumTabuar] = useState('');
@@ -20,38 +29,56 @@ export default () => {
         });
     }
 
+    const adUnit = useMemo(() => {
+        if (__DEV__) {
+            return TestIds.BANNER;
+        }
+
+        if (Platform.OS === 'ios') {
+            return EnvConfig.IOS_ADMOB_ADUNIT_HOMEBANNER;
+        }
+
+        return EnvConfig.ANDROID_ADMOB_ADUNIT_HOMEBANNER;
+    }, []);
+
     return (
         <Container>
-            <TextInput
-                spellCheck={false}
-                keyboardType="numeric"
-                placeholder="Tabuada de qual número?"
-                value={String(numTabuar)}
-                onChangeText={(v) => {
-                    const regex = /^[0-9\b]+$/;
+            <InputContainer>
+                <TextInput
+                    spellCheck={false}
+                    keyboardType="numeric"
+                    placeholder="Tabuada de qual número?"
+                    value={String(numTabuar)}
+                    onChangeText={(v) => {
+                        const regex = /^[0-9\b]+$/;
 
-                    if (v === '' || regex.test(v)) {
-                        setNumTabuar(v);
-                    }
-                }}
-            />
+                        if (v === '' || regex.test(v)) {
+                            setNumTabuar(v);
+                        }
+                    }}
+                />
 
-            <TextInput
-                spellCheck={false}
-                keyboardType="numeric"
-                placeholder="Tabuada até qual número?"
-                value={String(numVezes)}
-                onChangeText={(v) => {
-                    const regex = /^[0-9\b]+$/;
+                <TextInput
+                    spellCheck={false}
+                    keyboardType="numeric"
+                    placeholder="Tabuada até qual número?"
+                    value={String(numVezes)}
+                    onChangeText={(v) => {
+                        const regex = /^[0-9\b]+$/;
 
-                    if (v === '' || regex.test(v)) {
-                        setNumVezes(v);
-                    }
-                }}
-            />
-            <Button onPress={handleButtonClick}>
-                <ButtonText>Calcular</ButtonText>
-            </Button>
+                        if (v === '' || regex.test(v)) {
+                            setNumVezes(v);
+                        }
+                    }}
+                />
+                <Button onPress={handleButtonClick}>
+                    <ButtonText>Calcular</ButtonText>
+                </Button>
+            </InputContainer>
+
+            <BannerAd size={BannerAdSize.MEDIUM_RECTANGLE} unitId={adUnit} />
         </Container>
     );
 };
+
+export default Home;
