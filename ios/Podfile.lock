@@ -314,8 +314,8 @@ PODS:
     - React
   - react-native-config (1.2.1):
     - React
-  - react-native-safe-area-context (3.0.5):
-    - React
+  - react-native-safe-area-context (3.1.9):
+    - React-Core
   - React-RCTActionSheet (0.63.4):
     - React-Core/RCTActionSheetHeaders (= 0.63.4)
   - React-RCTAnimation (0.63.4):
@@ -390,12 +390,12 @@ PODS:
     - Firebase/Crashlytics (~> 7.4.0)
     - React-Core
     - RNFBApp
-  - RNGestureHandler (1.7.0):
-    - React
-  - RNReanimated (1.9.0):
-    - React
-  - RNScreens (2.9.0):
-    - React
+  - RNGestureHandler (1.9.0):
+    - React-Core
+  - RNReanimated (1.13.2):
+    - React-Core
+  - RNScreens (2.15.1):
+    - React-Core
   - RNVectorIcons (7.0.0):
     - React
   - SSZipArchive (2.2.3)
@@ -618,7 +618,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
   react-native-appearance: 0f0e5fc2fcef70e03d48c8fe6b00b9158c2ba8aa
   react-native-config: ae9ef3bdbf539f2d14ebaf4ebeba508f766e066a
-  react-native-safe-area-context: e768fca90207ee68924b3d0877633f2ce9cc9d68
+  react-native-safe-area-context: b6e0e284002381d2ff29fa4fff42b4d8282e3c94
   React-RCTActionSheet: 89a0ca9f4a06c1f93c26067af074ccdce0f40336
   React-RCTAnimation: 1bde3ecc0c104c55df246eda516e0deb03c4e49b
   React-RCTBlob: a97d378b527740cc667e03ebfa183a75231ab0f0
@@ -633,9 +633,9 @@ SPEC CHECKSUMS:
   RNFBAdMob: f4344591c52745d5a7c51430cddd5ffe65798ed8
   RNFBApp: 43a062dc6a1a88edd934d2229d1ba64f25381598
   RNFBCrashlytics: 63676c8cc2d8879ef50c203170e752195041f5a9
-  RNGestureHandler: b6b359bb800ae399a9c8b27032bdbf7c18f08a08
-  RNReanimated: b5ccb50650ba06f6e749c7c329a1bc3ae0c88b43
-  RNScreens: c526239bbe0e957b988dacc8d75ac94ec9cb19da
+  RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
+  RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
+  RNScreens: 8aca37f78a2c5d8b50e400612618d00c03695a8c
   RNVectorIcons: da6fe858f5a65d7bbc3379540a889b0b12aa5976
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
