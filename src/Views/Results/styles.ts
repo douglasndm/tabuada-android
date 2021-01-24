@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 import styled, { css } from 'styled-components/native';
 import { getStatusBarHeight, isIphoneX } from 'react-native-iphone-x-helper';
 
@@ -17,6 +18,11 @@ export const Header = styled.View`
     css`
         padding-top: ${getStatusBarHeight() + 20}px;
     `};
+
+    ${Platform.OS === 'android' &&
+    css`
+        padding-top: 20px;
+    `}
 `;
 
 export const PageTitle = styled.Text`

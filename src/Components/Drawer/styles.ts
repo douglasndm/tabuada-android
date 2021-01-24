@@ -1,7 +1,9 @@
-import styled from 'styled-components/native';
+import { Platform } from 'react-native';
+import styled, { css } from 'styled-components/native';
 import { Drawer } from 'react-native-paper';
 import { DrawerItem } from '@react-navigation/drawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { isIphoneX } from 'react-native-iphone-x-helper';
 
 import LogoSvg from '~/Assets/Images/2490315.svg';
 
@@ -34,6 +36,17 @@ export const LogoContainer = styled.View`
     justify-content: center;
     padding: 15px 0;
     flex-direction: row;
+
+    ${isIphoneX() &&
+    css`
+        padding-top: 65px;
+        margin-top: -65px;
+    `};
+
+    ${Platform.OS === 'android' &&
+    css`
+        margin-top: -5px;
+    `}
 `;
 
 export const Logo = styled(LogoSvg).attrs(() => ({

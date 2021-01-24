@@ -15,13 +15,14 @@ export const HeaderContainer = styled.View`
 
     flex-direction: row;
 
-    ${isIphoneX() &&
-    css`
-        padding-top: ${getStatusBarHeight() + 20}px;
-    `}
     ${Platform.OS === 'android' &&
     css`
         padding-top: 20px;
+    `}
+
+    ${isIphoneX() &&
+    css`
+        padding-top: ${getStatusBarHeight() + 20}px;
     `}
 `;
 
