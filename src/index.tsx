@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import { StatusBar } from 'react-native';
 import CodePush, { CodePushOptions } from 'react-native-code-push';
 import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from 'styled-components/native';
@@ -14,6 +15,7 @@ const theme = GetTheme();
 const App: React.FC = () => (
     <ThemeProvider theme={theme}>
         <NavigationContainer>
+            <StatusBar backgroundColor="#00bfff" />
             <Drawer />
         </NavigationContainer>
     </ThemeProvider>
