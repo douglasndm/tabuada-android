@@ -1,13 +1,14 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-    display: flex;
-    height: 100%;
+    flex: 1;
+    background-color: ${(props) => props.theme.colors.background};
+`;
 
+export const Content = styled.View`
     justify-content: center;
     align-items: center;
-
-    background-color: ${(props) => props.theme.colors.background};
+    flex: 1;
 `;
 
 export const InputContainer = styled.View`
