@@ -9,8 +9,8 @@ export const ButtonContainer = styled(RectButton).attrs((props) => ({
     margin: 0 3px;
 `;
 
-export const BackButtonImage = styled(Ionicons).attrs(() => ({
+export const BackButtonImage = styled(Ionicons).attrs((props) => ({
     name: 'arrow-back-outline',
-    color: '#fff',
+    color: props.theme.colors.text,
     size: 28,
 }))``;

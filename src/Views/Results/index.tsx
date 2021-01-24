@@ -83,7 +83,7 @@ const Results: React.FC = () => {
     return (
         <Container>
             <Header>
-                <BackButton handleOnPress={goBack} />
+                <BackButton handleOnPress={goBack} color="#FFF" />
                 <PageTitle>Resultados</PageTitle>
             </Header>
 
