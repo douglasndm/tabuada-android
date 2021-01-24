@@ -1,5 +1,5 @@
-import React from 'react';
-import { Dimensions } from 'react-native';
+import React, { useMemo } from 'react';
+import { Dimensions, Platform } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
@@ -8,10 +8,6 @@ import EnvConfig from 'react-native-config';
 import { Container, AdContainer } from './styles';
 
 import ResultsComponent from '../../Components/Results';
-
-const adunit = __DEV__
-    ? TestIds.BANNER
-    : EnvConfig.ANDROID_ADMOB_ADUNIT_RESULTSBANNER;
 
 function CustonTabBar(props) {
     return (
@@ -30,6 +26,18 @@ interface Props {
 
 const Results: React.FC = () => {
     const [displayAd, setDisplayAd] = React.useState(true);
+
+    const adUnit = useMemo(() => {
+        if (__DEV__) {
+            return TestIds.BANNER;
+        }
+
+        if (Platform.OS === 'ios') {
+            return EnvConfig.IOS_ADMOB_ADUNIT_RESULTSBANNER;
+        }
+
+        return EnvConfig.ANDROID_ADMOB_ADUNIT_RESULTSBANNER;
+    }, []);
 
     const { params } = useRoute();
     const routeParams = params as Props;
@@ -120,8 +128,8 @@ const Results: React.FC = () => {
             {displayAd && (
                 <AdContainer>
                     <BannerAd
-                        unitId={adunit}
-                        size={BannerAdSize.BANNER}
+                        unitId={adUnit}
+                        size={BannerAdSize.LARGE_BANNER}
                         onAdFailedToLoad={handleAdFailedToLoad}
                     />
                 </AdContainer>
