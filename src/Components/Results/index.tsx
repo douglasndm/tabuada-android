@@ -11,7 +11,7 @@ function ResItem({ result }) {
     );
 }
 
-function Results(props) {
+const ListResults: React.FC = (props) => {
     const [results, setResults] = useState([]);
 
     const { numTabuar, numVezes, resultType } = props;
@@ -59,17 +59,17 @@ function Results(props) {
                     break;
             }
         }
-    }, [numTabuar, numVezes]);
+    }, [numTabuar, numVezes, resultType]);
 
     return (
         <View>
             <FlatList
                 data={results}
-                keyExtractor={(result) => result}
+                keyExtractor={(result, index) => String(index)}
                 renderItem={({ item }) => <ResItem result={item} />}
             />
         </View>
     );
-}
+};
 
-export default Results;
+export default ListResults;
