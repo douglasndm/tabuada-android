@@ -19,9 +19,15 @@ import {
 const DrawerMenu: React.FC<DrawerContentOptions> = (
     props: DrawerContentOptions
 ) => {
+    const { navigation } = props;
+
     const handleNavigateToSite = useCallback(async () => {
         await Linking.openURL('https://douglasndm.dev');
     }, []);
+
+    const handleNavigateToAbout = useCallback(() => {
+        navigation.navigate('About');
+    }, [navigation]);
 
     return (
         <Container>
@@ -48,7 +54,7 @@ const DrawerMenu: React.FC<DrawerContentOptions> = (
                 <MenuItem
                     label="Sobre"
                     icon={() => <Icon name="help-circle-outline" />}
-                    onPress={() => {}}
+                    onPress={handleNavigateToAbout}
                 />
             </DrawerSection>
         </Container>
