@@ -19,6 +19,12 @@ export const Header = styled.View`
         padding-top: ${getStatusBarHeight() + 20}px;
     `};
 
+    ${Platform.OS === 'ios' &&
+    !isIphoneX() &&
+    css`
+        padding-top: ${getStatusBarHeight() + 20}px;
+    `}
+
     ${Platform.OS === 'android' &&
     css`
         padding-top: 20px;

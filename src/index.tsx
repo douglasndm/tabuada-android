@@ -15,7 +15,7 @@ const theme = GetTheme();
 const App: React.FC = () => (
     <ThemeProvider theme={theme}>
         <NavigationContainer>
-            <StatusBar backgroundColor="#00bfff" />
+            <StatusBar backgroundColor="#00bfff" barStyle="light-content" />
             <Drawer />
         </NavigationContainer>
     </ThemeProvider>

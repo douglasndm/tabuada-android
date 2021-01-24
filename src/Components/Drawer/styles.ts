@@ -43,6 +43,13 @@ export const LogoContainer = styled.View`
         margin-top: -65px;
     `};
 
+    ${Platform.OS === 'ios' &&
+    !isIphoneX() &&
+    css`
+        padding-top: 25px;
+        margin-top: -25px;
+    `}
+
     ${Platform.OS === 'android' &&
     css`
         margin-top: -5px;
