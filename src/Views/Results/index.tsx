@@ -5,10 +5,16 @@ import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
 import EnvConfig from 'react-native-config';
 
-import BackButton from '~/Components/BackButton';
 import ResultsComponent from '~/Components/Results';
 
-import { Container, Header, PageTitle, AdContainer } from './styles';
+import {
+    Container,
+    Header,
+    ButtonContainer,
+    BackButtonImage,
+    PageTitle,
+    AdContainer,
+} from './styles';
 
 function CustonTabBar(props) {
     return (
@@ -83,7 +89,9 @@ const Results: React.FC = () => {
     return (
         <Container>
             <Header>
-                <BackButton handleOnPress={goBack} color="#FFF" />
+                <ButtonContainer onPress={goBack} rippleColor="red">
+                    <BackButtonImage />
+                </ButtonContainer>
                 <PageTitle>Resultados</PageTitle>
             </Header>
 
