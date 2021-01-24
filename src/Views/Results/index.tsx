@@ -1,13 +1,14 @@
 import React, { useMemo } from 'react';
 import { Dimensions, Platform } from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import { useRoute, useNavigation } from '@react-navigation/native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
 import EnvConfig from 'react-native-config';
 
-import { Container, AdContainer } from './styles';
+import BackButton from '~/Components/BackButton';
+import ResultsComponent from '~/Components/Results';
 
-import ResultsComponent from '../../Components/Results';
+import { Container, Header, PageTitle, AdContainer } from './styles';
 
 function CustonTabBar(props) {
     return (
@@ -25,6 +26,8 @@ interface Props {
 }
 
 const Results: React.FC = () => {
+    const { goBack } = useNavigation();
+
     const [displayAd, setDisplayAd] = React.useState(true);
 
     const adUnit = useMemo(() => {
@@ -79,6 +82,11 @@ const Results: React.FC = () => {
 
     return (
         <Container>
+            <Header>
+                <BackButton handleOnPress={goBack} />
+                <PageTitle>Resultados</PageTitle>
+            </Header>
+
             <TabView
                 tabBarPosition="bottom"
                 navigationState={{ index, routes }}
