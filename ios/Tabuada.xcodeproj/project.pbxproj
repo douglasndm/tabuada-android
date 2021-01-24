@@ -45,6 +45,7 @@
 		325668AAB2BD3ED89DE422C9 /* Pods-Tabuada.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabuada.staging.xcconfig"; path = "Target Support Files/Pods-Tabuada/Pods-Tabuada.staging.xcconfig"; sourceTree = "<group>"; };
 		4F20D85525B7BB43005560AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F20D8AD25B7C1C5005560AE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		4F20D95425B7D7CC005560AE /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		63A95D678CA7846EC8BA8765 /* Pods-Tabuada-TabuadaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabuada-TabuadaTests.release.xcconfig"; path = "Target Support Files/Pods-Tabuada-TabuadaTests/Pods-Tabuada-TabuadaTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Tabuada/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5880CDFBD98BD09C955264C /* Pods-Tabuada-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabuada-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Tabuada-tvOSTests/Pods-Tabuada-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		13B07FAE1A68108700A75B9A /* Tabuada */ = {
 			isa = PBXGroup;
 			children = (
+				4F20D95325B7D7AC005560AE /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -121,6 +123,14 @@
 				04457DEDC413357C55FAEB56 /* libPods-Tabuada-tvOSTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F20D95325B7D7AC005560AE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4F20D95425B7D7CC005560AE /* Ionicons.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {

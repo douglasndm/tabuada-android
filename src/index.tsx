@@ -7,14 +7,14 @@ import './Services/Admob';
 
 import { GetTheme } from './Themes';
 
-import Routes from './routes';
+import Drawer from '~/Routes/Drawer';
 
 const theme = GetTheme();
 
 const App: React.FC = () => (
     <ThemeProvider theme={theme}>
         <NavigationContainer>
-            <Routes />
+            <Drawer />
         </NavigationContainer>
     </ThemeProvider>
 );
