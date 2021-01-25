@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { View, Linking } from 'react-native';
+import { View, Linking, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { getVersion } from 'react-native-device-info';
 
@@ -49,24 +49,30 @@ const About: React.FC = () => {
 
             <AboutSection>
                 <Text>Criado por Douglas Nunes de Mattos</Text>
-                <Link onPress={handleLinkedinPress}>Linkedin</Link>
+                {Platform.OS !== 'ios' && (
+                    <Link onPress={handleLinkedinPress}>Linkedin</Link>
+                )}
             </AboutSection>
 
-            <AboutSection>
-                <Text>
-                    Ajude o aplicativo a continuar evoluindo doando qualquer
-                    valor
-                </Text>
-                <Link onPress={handleDonatePress}>Doar</Link>
-            </AboutSection>
+            {Platform.OS !== 'ios' && (
+                <AboutSection>
+                    <Text>
+                        Ajude o aplicativo a continuar evoluindo doando qualquer
+                        valor
+                    </Text>
+                    <Link onPress={handleDonatePress}>Doar</Link>
+                </AboutSection>
+            )}
 
             <AboutSection>
                 <Text>Icons made by Smashicons from www.flaticon.com</Text>
 
                 <View>
-                    <Link onPress={iconsUrl}>
-                        https://www.flaticon.com/authors/srip
-                    </Link>
+                    {Platform.OS !== 'ios' && (
+                        <Link onPress={iconsUrl}>
+                            https://www.flaticon.com/authors/srip
+                        </Link>
+                    )}
                 </View>
             </AboutSection>
         </Container>
