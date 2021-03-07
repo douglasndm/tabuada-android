@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { View, Linking, Platform } from 'react-native';
+import { Linking } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { getVersion } from 'react-native-device-info';
 
@@ -23,12 +23,6 @@ const About: React.FC = () => {
         await Linking.openURL('https://www.linkedin.com/in/douglasndm/');
     }, []);
 
-    const handleDonatePress = useCallback(async () => {
-        await Linking.openURL(
-            'https://www.paypal.com/donate?hosted_button_id=L68N3E8YGSTW2'
-        );
-    }, []);
-
     const iconsUrl = useCallback(async () => {
         await Linking.openURL('https://www.flaticon.com/authors/smashicons');
     }, []);
@@ -49,31 +43,15 @@ const About: React.FC = () => {
 
             <AboutSection>
                 <Text>Criado por Douglas Nunes de Mattos</Text>
-                {Platform.OS !== 'ios' && (
-                    <Link onPress={handleLinkedinPress}>Linkedin</Link>
-                )}
+
+                <Link onPress={handleLinkedinPress}>Linkedin</Link>
             </AboutSection>
 
-            {Platform.OS !== 'ios' && (
-                <AboutSection>
-                    <Text>
-                        Ajude o aplicativo a continuar evoluindo doando qualquer
-                        valor
-                    </Text>
-                    <Link onPress={handleDonatePress}>Doar</Link>
-                </AboutSection>
-            )}
-
             <AboutSection>
-                <Text>Icons made by Smashicons from www.flaticon.com</Text>
-
-                <View>
-                    {Platform.OS !== 'ios' && (
-                        <Link onPress={iconsUrl}>
-                            https://www.flaticon.com/authors/srip
-                        </Link>
-                    )}
-                </View>
+                <Text>
+                    Icons made by Smashicons from{' '}
+                    <Link onPress={iconsUrl}>www.flaticon.com</Link>
+                </Text>
             </AboutSection>
         </Container>
     );
