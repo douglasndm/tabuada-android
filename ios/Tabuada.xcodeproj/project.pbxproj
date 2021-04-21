@@ -45,6 +45,7 @@
 		275A5893036D5908B53410FF /* Pods-Tabuada-TabuadaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabuada-TabuadaTests.debug.xcconfig"; path = "Target Support Files/Pods-Tabuada-TabuadaTests/Pods-Tabuada-TabuadaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		325668AAB2BD3ED89DE422C9 /* Pods-Tabuada.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabuada.staging.xcconfig"; path = "Target Support Files/Pods-Tabuada/Pods-Tabuada.staging.xcconfig"; sourceTree = "<group>"; };
 		4F12666026308BC2001E3792 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4F1CBFB026309EA800EDB480 /* Tabuada.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Tabuada.entitlements; path = Tabuada/Tabuada.entitlements; sourceTree = "<group>"; };
 		4F20D85525B7BB43005560AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F20D8AD25B7C1C5005560AE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		4F20D95425B7D7CC005560AE /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 		13B07FAE1A68108700A75B9A /* Tabuada */ = {
 			isa = PBXGroup;
 			children = (
+				4F1CBFB026309EA800EDB480 /* Tabuada.entitlements */,
 				4F20D95325B7D7AC005560AE /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -387,6 +389,9 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
 			name = "[CP-User] [RNFB] Core Configuration";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -615,6 +620,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Tabuada/Tabuada.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = F3ZQ4BPF29;
 				ENABLE_BITCODE = NO;
@@ -640,6 +646,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Tabuada/Tabuada.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = F3ZQ4BPF29;
 				INFOPLIST_FILE = Tabuada/Info.plist;
@@ -720,6 +727,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Tabuada/Tabuada.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = F3ZQ4BPF29;
 				INFOPLIST_FILE = Tabuada/Info.plist;
