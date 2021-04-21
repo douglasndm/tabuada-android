@@ -37,6 +37,7 @@
         "no-param-reassign": "off",
         "no-underscore-dangle": "off",
         "camelcase": "off",
+        "jsx-a11y/anchor-is-valid": "off",
         "no-console": ["error", { "allow": ["tron"] }],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
@@ -49,7 +50,7 @@
               "ts": "never",
               "tsx": "never"
             }
-        ],
+          ],
           // note you must disable the base rule as it can report incorrect errors
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": ["error"]

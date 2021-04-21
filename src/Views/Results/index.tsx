@@ -1,9 +1,11 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useContext } from 'react';
 import { Dimensions, Platform } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
 import EnvConfig from 'react-native-config';
+
+import PreferencesContext from '~/Contexts/PreferencesContext';
 
 import ResultsComponent from '~/Components/Results';
 
@@ -33,6 +35,10 @@ interface Props {
 
 const Results: React.FC = () => {
     const { goBack } = useNavigation();
+
+    const { userPreferences, setUserPreferences } = useContext(
+        PreferencesContext
+    );
 
     const [displayAd, setDisplayAd] = React.useState(true);
 
@@ -141,7 +147,7 @@ const Results: React.FC = () => {
                 renderTabBar={CustonTabBar}
             />
 
-            {displayAd && (
+            {displayAd && !userPreferences.removeAds && (
                 <AdContainer>
                     <BannerAd
                         unitId={adUnit}

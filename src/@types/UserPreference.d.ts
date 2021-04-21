@@ -1,0 +1,3 @@
+interface IUserPreferences {
+    removeAds: boolean;
+}

@@ -2,7 +2,7 @@ PODS:
   - Base64 (1.1.2)
   - boost-for-react-native (1.63.0)
   - CocoaAsyncSocket (7.6.5)
-  - CodePush (6.4.1):
+  - CodePush (7.0.0):
     - Base64 (~> 1.1)
     - JWT (~> 3.0.0-beta.12)
     - React-Core
@@ -16,30 +16,30 @@ PODS:
     - React-Core (= 0.64.0)
     - React-jsi (= 0.64.0)
     - ReactCommon/turbomodule/core (= 0.64.0)
-  - Firebase/AdMob (7.4.0):
+  - Firebase/AdMob (7.9.0):
     - Firebase/CoreOnly
     - Google-Mobile-Ads-SDK (~> 7.66)
-  - Firebase/CoreOnly (7.4.0):
-    - FirebaseCore (= 7.4.0)
-  - Firebase/Crashlytics (7.4.0):
+  - Firebase/CoreOnly (7.9.0):
+    - FirebaseCore (= 7.9.0)
+  - Firebase/Crashlytics (7.9.0):
     - Firebase/CoreOnly
-    - FirebaseCrashlytics (~> 7.4.0)
-  - FirebaseCore (7.4.0):
+    - FirebaseCrashlytics (~> 7.9.0)
+  - FirebaseCore (7.9.0):
     - FirebaseCoreDiagnostics (~> 7.4)
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/Logger (~> 7.0)
-  - FirebaseCoreDiagnostics (7.4.0):
+  - FirebaseCoreDiagnostics (7.9.0):
     - GoogleDataTransport (~> 8.0)
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/Logger (~> 7.0)
     - nanopb (~> 2.30907.0)
-  - FirebaseCrashlytics (7.4.0):
+  - FirebaseCrashlytics (7.9.0):
     - FirebaseCore (~> 7.0)
     - FirebaseInstallations (~> 7.0)
     - GoogleDataTransport (~> 8.0)
     - nanopb (~> 2.30907.0)
     - PromisesObjC (~> 1.2)
-  - FirebaseInstallations (7.4.0):
+  - FirebaseInstallations (7.11.0):
     - FirebaseCore (~> 7.0)
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/UserDefaults (~> 7.0)
@@ -94,33 +94,35 @@ PODS:
   - Google-Mobile-Ads-SDK (7.69.0):
     - GoogleAppMeasurement (~> 7.0)
     - GoogleUserMessagingPlatform (~> 1.1)
-  - GoogleAppMeasurement (7.4.0):
+  - GoogleAppMeasurement (7.9.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
     - GoogleUtilities/MethodSwizzler (~> 7.0)
     - GoogleUtilities/Network (~> 7.0)
     - "GoogleUtilities/NSData+zlib (~> 7.0)"
     - nanopb (~> 2.30907.0)
-  - GoogleDataTransport (8.2.0):
+  - GoogleDataTransport (8.3.1):
+    - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30907.0)
+    - PromisesObjC (~> 1.2)
   - GoogleUserMessagingPlatform (1.4.0)
-  - GoogleUtilities/AppDelegateSwizzler (7.2.0):
+  - GoogleUtilities/AppDelegateSwizzler (7.3.1):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (7.2.0):
+  - GoogleUtilities/Environment (7.3.1):
     - PromisesObjC (~> 1.2)
-  - GoogleUtilities/Logger (7.2.0):
+  - GoogleUtilities/Logger (7.3.1):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (7.2.0):
+  - GoogleUtilities/MethodSwizzler (7.3.1):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (7.2.0):
+  - GoogleUtilities/Network (7.3.1):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (7.2.0)"
-  - GoogleUtilities/Reachability (7.2.0):
+  - "GoogleUtilities/NSData+zlib (7.3.1)"
+  - GoogleUtilities/Reachability (7.3.1):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (7.2.0):
+  - GoogleUtilities/UserDefaults (7.3.1):
     - GoogleUtilities/Logger
   - JWT (3.0.0-beta.12):
     - Base64 (~> 1.1.2)
@@ -133,6 +135,11 @@ PODS:
   - OpenSSL-Universal (1.1.180)
   - PersonalizedAdConsent (1.0.5)
   - PromisesObjC (1.2.12)
+  - Purchases (3.10.7):
+    - PurchasesCoreSwift (= 3.10.7)
+  - PurchasesCoreSwift (3.10.7)
+  - PurchasesHybridCommon (1.6.2):
+    - Purchases (= 3.10.7)
   - RCT-Folly (2020.01.13.00):
     - boost-for-react-native
     - DoubleConversion
@@ -396,23 +403,28 @@ PODS:
     - React-cxxreact (= 0.64.0)
     - React-jsi (= 0.64.0)
     - React-perflogger (= 0.64.0)
+  - RNCAsyncStorage (1.15.3):
+    - React-Core
   - RNCMaskedView (0.1.10):
     - React
   - RNDeviceInfo (8.0.1):
     - React-Core
-  - RNFBAdMob (10.5.1):
-    - Firebase/AdMob (~> 7.4.0)
+  - RNFBAdMob (11.2.0):
+    - Firebase/AdMob (= 7.9.0)
     - PersonalizedAdConsent (~> 1.0.4)
     - React-Core
     - RNFBApp
-  - RNFBApp (10.5.0):
-    - Firebase/CoreOnly (~> 7.4.0)
+  - RNFBApp (11.2.0):
+    - Firebase/CoreOnly (= 7.9.0)
     - React-Core
-  - RNFBCrashlytics (10.5.1):
-    - Firebase/Crashlytics (~> 7.4.0)
+  - RNFBCrashlytics (11.2.0):
+    - Firebase/Crashlytics (= 7.9.0)
     - React-Core
     - RNFBApp
   - RNGestureHandler (1.9.0):
+    - React-Core
+  - RNPurchases (4.1.1):
+    - PurchasesHybridCommon (= 1.6.2)
     - React-Core
   - RNReanimated (1.13.2):
     - React-Core
@@ -480,12 +492,14 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - "RNFBAdMob (from `../node_modules/@react-native-firebase/admob`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBCrashlytics (from `../node_modules/@react-native-firebase/crashlytics`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNPurchases (from `../node_modules/react-native-purchases`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
@@ -520,6 +534,9 @@ SPEC REPOS:
     - OpenSSL-Universal
     - PersonalizedAdConsent
     - PromisesObjC
+    - Purchases
+    - PurchasesCoreSwift
+    - PurchasesHybridCommon
     - SSZipArchive
     - YogaKit
 
@@ -586,6 +603,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
   RNCMaskedView:
     :path: "../node_modules/@react-native-community/masked-view"
   RNDeviceInfo:
@@ -598,6 +617,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/crashlytics"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNPurchases:
+    :path: "../node_modules/react-native-purchases"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -613,15 +634,15 @@ SPEC CHECKSUMS:
   Base64: cecfb41a004124895a7bcee567a89bae5a89d49b
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
-  CodePush: 352a7efabd0a7079a1138a5c6f677baedb0dedf9
+  CodePush: 4e72e70067c1442ddfe25e3e53b23a6fa573f5c6
   DoubleConversion: cde416483dac037923206447da6e1454df403714
   FBLazyVector: 49cbe4b43e445b06bf29199b6ad2057649e4c8f5
   FBReactNativeSpec: 8d7e58ea546ce82cd57dd3c223d60b8d5fabb0da
-  Firebase: 09fb40287b6dfc8ee65f726fa0b788719d3f2a07
-  FirebaseCore: 99c06e5a1e8d6952e75cb1f0a6d0b23c0f5ccdcf
-  FirebaseCoreDiagnostics: 3770093ac4f2be4590fa03cfa1d3a6e5602d4557
-  FirebaseCrashlytics: ef6b0947ab6819b5cb335f8c0a7677cd57d544c5
-  FirebaseInstallations: 30646fc9a61c6f4ee3cd7a8b7231721842b40c95
+  Firebase: d8bd6bd34b4c7ed57bfdd056c66ff5adcdde53ab
+  FirebaseCore: 0798738ad1ae0fda67e17c7b9081241c431c6859
+  FirebaseCoreDiagnostics: 3d36e05da74cb8b7ce30e6594a8f201b982c725c
+  FirebaseCrashlytics: 73cfa8d24d573ed1ff648acce3900df39ca32d77
+  FirebaseInstallations: a58d4f72ec5861840b84df489f2668d970df558a
   Flipper: d3da1aa199aad94455ae725e9f3aa43f3ec17021
   Flipper-DoubleConversion: 38631e41ef4f9b12861c67d17cb5518d06badc41
   Flipper-Folly: f7a3caafbd74bda4827954fd7a6e000e36355489
@@ -631,16 +652,19 @@ SPEC CHECKSUMS:
   FlipperKit: 8a20b5c5fcf9436cac58551dc049867247f64b00
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
   Google-Mobile-Ads-SDK: 2f288748a42920d1c744946a460896a95b0e9110
-  GoogleAppMeasurement: 688d7f00e2894d9e13823ed9a028b13b993bc277
-  GoogleDataTransport: 1024b1a4dfbd7a0e92cb20d7e0a6f1fb66b449a4
+  GoogleAppMeasurement: 120eec8803fe65a4a7475fb3d3d59a61d0e1a866
+  GoogleDataTransport: 8b0e733ea77c9218778e5a9e34ba9508b8328939
   GoogleUserMessagingPlatform: b168e8c46cd8f92aa3e34b584c4ca78a411ce367
-  GoogleUtilities: d866834472f1324d080496bc67ab3ce5d0d46027
+  GoogleUtilities: e1d9ed4e544fc32a93e00e721400cbc3f377200d
   JWT: 9b5c05abbcc1a0e69c3c91e1655b3387fc7e581d
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   OpenSSL-Universal: 1aa4f6a6ee7256b83db99ec1ccdaa80d10f9af9b
   PersonalizedAdConsent: dbecabb3467df967c16d9cebc2ef4a8890e4bbd8
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  Purchases: b8b8fb6e856ac8166e217f6e014df894d821dda1
+  PurchasesCoreSwift: 8ae0f08e020f0bc97c1befa4e38a0dbc8e9732e0
+  PurchasesHybridCommon: 5f5c1c245b12fc5e8760af7d11cb10f888109a9b
   RCT-Folly: ec7a233ccc97cc556cf7237f0db1ff65b986f27c
   RCTRequired: 2f8cb5b7533219bf4218a045f92768129cf7050a
   RCTTypeSafety: 512728b73549e72ad7330b92f3d42936f2a4de5b
@@ -667,12 +691,14 @@ SPEC CHECKSUMS:
   React-RCTVibration: 0fd6b21751a33cb72fce1a4a33ab9678416d307a
   React-runtimeexecutor: cad74a1eaa53ee6e7a3620231939d8fe2c6afcf0
   ReactCommon: cfe2b7fd20e0dbd2d1185cd7d8f99633fbc5ff05
+  RNCAsyncStorage: 9924d6b4affe9081f08073f354ec6b09c839ff31
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNDeviceInfo: 921a809eaf9de79645a24de1c6ca90db6cb91786
-  RNFBAdMob: f4344591c52745d5a7c51430cddd5ffe65798ed8
-  RNFBApp: 43a062dc6a1a88edd934d2229d1ba64f25381598
-  RNFBCrashlytics: 63676c8cc2d8879ef50c203170e752195041f5a9
+  RNFBAdMob: f4385f8d2589323cbf84a812cd28f2a3531b9ce3
+  RNFBApp: d9ab9f2e63c70a9974294bb44c749b728cd4028f
+  RNFBCrashlytics: d7dd4c9660bb10ae60978707540c61dc092b01f0
   RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
+  RNPurchases: ffe3b7fd393642f35695907947f2cdb84b282ebb
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
   RNScreens: 8aca37f78a2c5d8b50e400612618d00c03695a8c
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e

@@ -25,6 +25,10 @@ const DrawerMenu: React.FC<DrawerContentOptions> = (
         await Linking.openURL('https://douglasndm.dev');
     }, []);
 
+    const handleNavigateToSettings = useCallback(() => {
+        navigation.navigate('Settings');
+    }, [navigation]);
+
     const handleNavigateToAbout = useCallback(() => {
         navigation.navigate('About');
     }, [navigation]);
@@ -46,6 +50,11 @@ const DrawerMenu: React.FC<DrawerContentOptions> = (
             </DrawerContentScrollView>
 
             <DrawerSection>
+                <MenuItem
+                    label="Configurações"
+                    icon={() => <Icon name="settings-outline" />}
+                    onPress={handleNavigateToSettings}
+                />
                 <MenuItem
                     label="Mais aplicativos"
                     icon={() => <Icon name="globe-outline" />}

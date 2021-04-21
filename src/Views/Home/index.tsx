@@ -1,8 +1,10 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useContext } from 'react';
 import { Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
 import EnvConfig from 'react-native-config';
+
+import PreferencesContext from '~/Contexts/PreferencesContext';
 
 import Header from '~/Components/Header';
 
@@ -19,6 +21,10 @@ import {
 
 const Home: React.FC = () => {
     const { navigate } = useNavigation();
+
+    const { userPreferences, setUserPreferences } = useContext(
+        PreferencesContext
+    );
 
     const [numTabuar, setNumTabuar] = useState('');
     const [numVezes, setNumVezes] = useState('');
@@ -74,7 +80,7 @@ const Home: React.FC = () => {
                             keyboardType="numeric"
                             placeholder="Tabuada de qual número?"
                             value={String(numTabuar)}
-                            onChangeText={(v) => {
+                            onChangeText={v => {
                                 const regex = /^[0-9\b]+$/;
 
                                 if (v === '' || regex.test(v)) {
@@ -95,7 +101,7 @@ const Home: React.FC = () => {
                             keyboardType="numeric"
                             placeholder="Tabuada até qual número?"
                             value={String(numVezes)}
-                            onChangeText={(v) => {
+                            onChangeText={v => {
                                 const regex = /^[0-9\b]+$/;
 
                                 if (v === '' || regex.test(v)) {
@@ -115,10 +121,12 @@ const Home: React.FC = () => {
                     </Button>
                 </InputContainer>
 
-                <BannerAd
-                    size={BannerAdSize.MEDIUM_RECTANGLE}
-                    unitId={adUnit}
-                />
+                {!userPreferences.removeAds && (
+                    <BannerAd
+                        size={BannerAdSize.MEDIUM_RECTANGLE}
+                        unitId={adUnit}
+                    />
+                )}
             </Content>
         </Container>
     );
