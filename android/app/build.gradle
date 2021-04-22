@@ -143,8 +143,8 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         multiDexEnabled true
-        versionCode 13
-        versionName "1.2.0"
+        versionCode 14
+        versionName "1.2.2"
 
         resValue 'string', "CODE_PUSH_APK_BUILD_TIME", String.format("\"%d\"", System.currentTimeMillis())
     }
@@ -232,8 +232,7 @@ dependencies {
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
-    def multidex_version = "2.0.1"
-    implementation 'androidx.multidex:multidex:$multidex_version'
+    implementation "androidx.multidex:multidex:2.0.1"
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'

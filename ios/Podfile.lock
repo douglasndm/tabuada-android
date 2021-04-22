@@ -364,9 +364,11 @@ PODS:
   - React-jsinspector (0.64.0)
   - react-native-appearance (0.3.4):
     - React
-  - react-native-config (1.2.1):
-    - React
-  - react-native-safe-area-context (3.1.9):
+  - react-native-config (1.4.2):
+    - react-native-config/App (= 1.4.2)
+  - react-native-config/App (1.4.2):
+    - React-Core
+  - react-native-safe-area-context (3.2.0):
     - React-Core
   - React-perflogger (0.64.0)
   - React-RCTActionSheet (0.64.0):
@@ -436,7 +438,7 @@ PODS:
     - React-Core
   - RNCMaskedView (0.1.10):
     - React
-  - RNDeviceInfo (8.0.1):
+  - RNDeviceInfo (8.1.2):
     - React-Core
   - RNFBAdMob (11.3.2):
     - Firebase/AdMob (= 7.10.0)
@@ -458,18 +460,45 @@ PODS:
     - Firebase/Messaging (= 7.10.0)
     - React-Core
     - RNFBApp
-  - RNGestureHandler (1.9.0):
+  - RNGestureHandler (1.10.3):
     - React-Core
   - RNPurchases (4.1.1):
     - PurchasesHybridCommon (= 1.6.2)
     - React-Core
-  - RNReanimated (1.13.2):
-    - React-Core
-  - RNScreens (2.15.1):
-    - React-Core
-  - RNSVG (12.1.0):
+  - RNReanimated (2.1.0):
+    - DoubleConversion
+    - FBLazyVector
+    - FBReactNativeSpec
+    - glog
+    - RCT-Folly
+    - RCTRequired
+    - RCTTypeSafety
     - React
-  - RNVectorIcons (8.0.0):
+    - React-callinvoker
+    - React-Core
+    - React-Core/DevSupport
+    - React-Core/RCTWebSocket
+    - React-CoreModules
+    - React-cxxreact
+    - React-jsi
+    - React-jsiexecutor
+    - React-jsinspector
+    - React-RCTActionSheet
+    - React-RCTAnimation
+    - React-RCTBlob
+    - React-RCTImage
+    - React-RCTLinking
+    - React-RCTNetwork
+    - React-RCTSettings
+    - React-RCTText
+    - React-RCTVibration
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - RNScreens (3.1.1):
+    - React-Core
+  - RNSVG (12.1.1):
+    - React
+  - RNVectorIcons (8.1.0):
     - React-Core
   - SSZipArchive (2.2.3)
   - Yoga (1.14.0)
@@ -726,8 +755,8 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 06a9c77b56902ae7ffcdd7a4905f664adc5d237b
   React-jsinspector: 0ae35a37b20d5e031eb020a69cc5afdbd6406301
   react-native-appearance: 0f0e5fc2fcef70e03d48c8fe6b00b9158c2ba8aa
-  react-native-config: ae9ef3bdbf539f2d14ebaf4ebeba508f766e066a
-  react-native-safe-area-context: b6e0e284002381d2ff29fa4fff42b4d8282e3c94
+  react-native-config: c98128a72bc2c3a1ca72caec0b021f0fa944aa29
+  react-native-safe-area-context: f0906bf8bc9835ac9a9d3f97e8bde2a997d8da79
   React-perflogger: 9c547d8f06b9bf00cb447f2b75e8d7f19b7e02af
   React-RCTActionSheet: 3080b6e12e0e1a5b313c8c0050699b5c794a1b11
   React-RCTAnimation: 3f96f21a497ae7dabf4d2f150ee43f906aaf516f
@@ -742,18 +771,18 @@ SPEC CHECKSUMS:
   ReactCommon: cfe2b7fd20e0dbd2d1185cd7d8f99633fbc5ff05
   RNCAsyncStorage: 9924d6b4affe9081f08073f354ec6b09c839ff31
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
-  RNDeviceInfo: 921a809eaf9de79645a24de1c6ca90db6cb91786
+  RNDeviceInfo: 3266783bcb6aa4b0c785d6080a407f8a5fc68326
   RNFBAdMob: e44c07bb27b21c99854d4a8009681cd43e9371a1
   RNFBAnalytics: 190aac2a60181625826f9a132e30a7d297755afa
   RNFBApp: f3f728097b3f8f51a4afcec01424534a3a6106af
   RNFBCrashlytics: 2d5209bd281fd327a6b16d677d76567895d86599
   RNFBMessaging: 3a5255d2be323a135f215669fe48d615f5721177
-  RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
+  RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNPurchases: ffe3b7fd393642f35695907947f2cdb84b282ebb
-  RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
-  RNScreens: 8aca37f78a2c5d8b50e400612618d00c03695a8c
-  RNSVG: ce9d996113475209013317e48b05c21ee988d42e
-  RNVectorIcons: f67a1abce2ec73e62fe4606e8110e95a832bc859
+  RNReanimated: b8c8004b43446e3c2709fe64b2b41072f87428ad
+  RNScreens: bd1523c3bde7069b8e958e5a16e1fc7722ad0bdd
+  RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
+  RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
   Yoga: 8c8436d4171c87504c648ae23b1d81242bdf3bbf
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
