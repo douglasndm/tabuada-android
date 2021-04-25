@@ -84,9 +84,11 @@ export async function RestorePurchasers(): Promise<void> {
         const restore = await Purchases.restoreTransactions();
         // ... check restored purchaserInfo to see if entitlement is now active
 
-        if (restore.activeSubscriptions.length > 0) {
-            await setEnableRemoveAds(true);
-        }
+        restore.allPurchasedProductIdentifiers.forEach(async product => {
+            if (product === 'tabuada.removeads') {
+                await setEnableRemoveAds(true);
+            }
+        });
     } catch (e) {
         throw new Error(e.message);
     }
