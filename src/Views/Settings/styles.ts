@@ -32,7 +32,7 @@ export const SettingsContent = styled.View`
 export const Category = styled.View`
     margin-top: 20px;
     padding: 15px 15px 25px;
-    background-color: #eaeaea;
+    background-color: ${props => props.theme.colors.containers};
     border-radius: 12px;
 `;
 

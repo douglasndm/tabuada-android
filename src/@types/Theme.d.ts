@@ -8,6 +8,7 @@ declare module 'styled-components' {
             primary: string;
             accent: string;
             background: string;
+            containers: string;
             text: string;
             subText: string;
             textAccent: string;
@@ -25,6 +26,7 @@ interface ITheme {
         primary: string;
         accent: string;
         background: string;
+        containers: string;
         text: string;
         subText: string;
         textAccent: string;
