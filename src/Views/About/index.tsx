@@ -3,6 +3,8 @@ import { Linking } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { getVersion } from 'react-native-device-info';
 
+import strings from '~/Locales';
+
 import BackButton from '~/Components/BackButton';
 
 import {
@@ -25,6 +27,14 @@ const About: React.FC = () => {
 
     const iconsUrl = useCallback(async () => {
         await Linking.openURL('https://www.flaticon.com/authors/smashicons');
+    }, []);
+
+    const navigateToTerms = useCallback(async () => {
+        await Linking.openURL('https://douglasndm.dev/terms');
+    }, []);
+
+    const navigateToPrivacy = useCallback(async () => {
+        await Linking.openURL('https://douglasndm.dev/privacy');
     }, []);
 
     return (
@@ -51,6 +61,18 @@ const About: React.FC = () => {
                 <Text>
                     Icons made by Smashicons from{' '}
                     <Link onPress={iconsUrl}>www.flaticon.com</Link>
+                </Text>
+            </AboutSection>
+
+            <AboutSection>
+                <Text>
+                    {strings.BeforeTermsAndPrivacy}
+                    <Link onPress={navigateToTerms}>{strings.Terms}</Link>
+                    {strings.BetweenTermsAndPrivacy}
+                    <Link onPress={navigateToPrivacy}>
+                        {strings.PrivacyPolicy}
+                    </Link>
+                    .
                 </Text>
             </AboutSection>
         </Container>
