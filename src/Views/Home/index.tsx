@@ -1,10 +1,18 @@
-import React, { useState, useCallback, useMemo, useContext } from 'react';
+import React, {
+    useState,
+    useEffect,
+    useCallback,
+    useMemo,
+    useContext,
+} from 'react';
 import { Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { BannerAd, BannerAdSize, TestIds } from '@react-native-firebase/admob';
 import EnvConfig from 'react-native-config';
 
 import PreferencesContext from '~/Contexts/PreferencesContext';
+
+import { getAllowedToReadIDFA } from '~/Functions/Privacy';
 
 import Header from '~/Components/Header';
 
@@ -20,11 +28,21 @@ import {
 } from './styles';
 
 const Home: React.FC = () => {
-    const { navigate } = useNavigation();
+    const { navigate, reset } = useNavigation();
 
-    const { userPreferences, setUserPreferences } = useContext(
-        PreferencesContext
-    );
+    const { userPreferences } = useContext(PreferencesContext);
+
+    useEffect(() => {
+        if (Platform.OS === 'ios') {
+            getAllowedToReadIDFA().then(response => {
+                if (response === null) {
+                    reset({
+                        routes: [{ name: 'TrackingPermission' }],
+                    });
+                }
+            });
+        }
+    }, [reset]);
 
     const [numTabuar, setNumTabuar] = useState('');
     const [numVezes, setNumVezes] = useState('');
