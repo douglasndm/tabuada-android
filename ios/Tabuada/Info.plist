@@ -41,6 +41,8 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Precisamos da sua permissão para acessar a identificação exclusiva do seu dispositivo afim de melhorar os recusos e mostrar anúncios mais relevantes.</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -69,8 +71,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-
-    <key>NSUserTrackingUsageDescription</key>
-    <string>Precisamos da sua permissão para acessar a identificação exclusiva do seu dispositivo afim de melhorar os recusos e mostrar anúncios mais relevantes.</string>
 </dict>
 </plist>
