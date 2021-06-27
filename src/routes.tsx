@@ -1,11 +1,11 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 
 import Home from './Views/Home';
 import Results from './Views/Results';
 
-const StackNavigator = createStackNavigator();
+const StackNavigator = createNativeStackNavigator();
 
 const Routes: React.FC = () => (
     <>

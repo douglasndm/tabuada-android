@@ -465,11 +465,11 @@ PODS:
     - React-perflogger (= 0.64.2)
   - ReactNativeLocalization (2.1.7):
     - React-Core
-  - RNCAsyncStorage (1.15.3):
+  - RNCAsyncStorage (1.15.5):
     - React-Core
   - RNCMaskedView (0.1.10):
     - React
-  - RNDeviceInfo (8.1.2):
+  - RNDeviceInfo (8.1.3):
     - React-Core
   - RNFBAdMob (11.3.2):
     - Firebase/AdMob (= 7.10.0)
@@ -818,9 +818,9 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: a9904c6d0218fb9f8b19d6dd88607225927668f9
   ReactCommon: 149906e01aa51142707a10665185db879898e966
   ReactNativeLocalization: 90a1181b7672309701dd7e5364fbf587319d41c6
-  RNCAsyncStorage: 9924d6b4affe9081f08073f354ec6b09c839ff31
+  RNCAsyncStorage: 56a3355a10b5d660c48c6e37325ac85ebfd09885
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
-  RNDeviceInfo: 3266783bcb6aa4b0c785d6080a407f8a5fc68326
+  RNDeviceInfo: 8d3a29207835f972bce883723882980143270d55
   RNFBAdMob: e44c07bb27b21c99854d4a8009681cd43e9371a1
   RNFBAnalytics: 190aac2a60181625826f9a132e30a7d297755afa
   RNFBApp: f3f728097b3f8f51a4afcec01424534a3a6106af

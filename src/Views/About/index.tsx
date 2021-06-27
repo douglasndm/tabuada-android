@@ -58,10 +58,7 @@ const About: React.FC = () => {
             </AboutSection>
 
             <AboutSection>
-                <Text>
-                    Icons made by Smashicons from{' '}
-                    <Link onPress={iconsUrl}>www.flaticon.com</Link>
-                </Text>
+                <Text>Icons made by Smashicons from flaticon.com</Text>
             </AboutSection>
 
             <AboutSection>

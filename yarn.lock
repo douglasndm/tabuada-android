@@ -1658,10 +1658,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@react-native-async-storage/async-storage@^1.15.3":
-  version "1.15.3"
-  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.15.3.tgz#af4eae2ba66228cfbc24ecf803665abd085cd615"
-  integrity sha512-dmkK6sNOKPGVDUuM2WvMXfkCEzG3/MZnv0mfixntpAip83d5YEi3gLkvPet2JLSWw3PstOqdklm6/MALNBbUGg==
+"@react-native-async-storage/async-storage@^1.15.5":
+  version "1.15.5"
+  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.15.5.tgz#0d221a5ef1cd7a6494a42fcaad43136d68379afb"
+  integrity sha512-4AYehLH39B9a8UXCMf3ieOK+G61wGMP72ikx6/XSMA0DUnvx0PgaeaT2Wyt06kTrDTy8edewKnbrbeqwaM50TQ==
   dependencies:
     deep-assign "^3.0.0"
 
@@ -1926,10 +1926,10 @@
   dependencies:
     nanoid "^3.1.15"
 
-"@react-navigation/stack@^5.14.4":
-  version "5.14.4"
-  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.14.4.tgz#32f6717c03494f0ca6cf0dd43d8302af824de9e9"
-  integrity sha512-gQjWK8JHtVkD1p7wzjtSPuScJI0mSAk/N/gzgjQZo+rDUwgM8rOTDcVNRbtEOqCEgLQcZrZQHwhOjkrJirehjQ==
+"@react-navigation/stack@^5.14.5":
+  version "5.14.5"
+  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.14.5.tgz#dc615cd7d270ba79e3330dcb50c2819d0e1f3850"
+  integrity sha512-hpdn1SS0tc3/3atkV2Q2y++n5B4e0rUcCj4W43PODMu72yX2m0LkKAAcpkPDCWAvwnLLIoLAEl5BEifZigl/6A==
   dependencies:
     color "^3.1.3"
     react-native-iphone-x-helper "^1.3.0"
@@ -7696,10 +7696,10 @@ react-native-config@^1.4.2:
   resolved "https://registry.yarnpkg.com/react-native-config/-/react-native-config-1.4.2.tgz#cc39f22ed72c5cb06af1adf0ba70ef01593900b4"
   integrity sha512-iTvCvThvFTH7SdiBcsxYtpLy86zglsh51ZBqFPPZ75tdrQMdlRnDNnb86kNjQf03KT0qs1nCMLRejfPMIim8iA==
 
-react-native-device-info@^8.1.2:
-  version "8.1.2"
-  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-8.1.2.tgz#142f2f05e27689858d5aa73dae36f0c37c965031"
-  integrity sha512-5jaQBL42H3g8+KXkFlIy2lMyKyPPETI8eUYgEg7JylW7rltkMPngn/wDnupgP4NhDYI+fBdMRGdRjEeetFr0IQ==
+react-native-device-info@^8.1.3:
+  version "8.1.3"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-8.1.3.tgz#022fc01372632bf80c0a6d201aab53344efc715f"
+  integrity sha512-73e3wiGFL8DvIXEd8x4Aq+mO8mZvHARwfYorIEu+X0trLHY92bP5Ict8DJHDjCQ0+HtAvpA4Wda2VoUVN1zh6Q==
 
 react-native-gesture-handler@^1.10.3:
   version "1.10.3"
